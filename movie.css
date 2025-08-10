@@ -1,0 +1,223 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cormorant+Garamond:wght@400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #01090f;
+    color: #f5f5f5;
+    line-height: 1.6;
+}
+
+/* Banner */
+.banner {
+    height: 320px;
+    background: url('../images/harrybg.png') center/cover no-repeat;
+    position: relative;
+    width: 100%;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: gold;
+    text-shadow: 0 0 3px black, 0 0 8px gold;
+}
+
+.banner-text h1 {
+    font-family: 'Cinzel Decorative', serif;
+    margin: 0;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+}
+
+.banner-text p {
+    margin: 6px 0 0;
+    font-size: 1.1rem;
+}
+
+/* Sections */
+section {
+    background-color: rgba(0, 0, 0, 0.65);
+    margin: 25px auto;
+    padding: 25px;
+    width: 85%;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.7);
+}
+
+section h2 {
+    font-family: 'Cinzel Decorative', serif;
+    color: gold;
+    margin-bottom: 15px;
+}
+
+section {
+    background-color: #000000; /* Slightly lighter dark grey */
+}
+
+/* Increase font size for Synopsis info */
+.synopsis p {
+    font-size: 1.2rem; /* Slightly bigger than normal */
+    line-height: 1.8;
+}
+
+/* IMDb rating */
+.imdb-rating {
+    margin-top: 12px;
+    font-weight: bold;
+    color: gold;
+    font-size: 1.1em;
+}
+
+/* Cast grid */
+.cast-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.cast-card {
+    flex: 0 1 180px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cast-card:hover {
+    transform: translateY(-5px);
+}
+
+.cast-card img {
+    width: 160px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid gold;
+    box-shadow: 0 0 4px gold, 0 0 8px #ffdf6c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cast-card img:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 10px gold, 0 0 15px #ffdf6c;
+}
+
+.cast-card p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 22px;
+    color: #ffd700;
+}
+
+.cast-card,
+.review-card {
+    background-color: rgba(37, 33, 33, 0.85); /* Lighter than background */
+}
+
+/* Review cards */
+.review-card {
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* CSS-only stars */
+.stars {
+    --star-size: 1.2em;
+    --star-color: #444;
+    --star-background: gold;
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times, serif;
+    line-height: 1;
+}
+.stars::before {
+    content: "★★★★★";
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--star-background) calc(var(--rating) / 5 * 100%), var(--star-color) calc(var(--rating) / 5 * 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Watch list */
+.watch ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.watch li {
+    margin: 8px 0;
+}
+
+.watch a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.watch a:hover {
+    color: orange;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.75);
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: rgba(255, 215, 0, 0.85);
+}
+
+.studio-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .banner-text h1 {
+        font-size: 1.8rem;
+    }
+    section {
+        width: 92%;
+        padding: 15px;
+    }
+}
+
+.synopsis,
+.cast,
+.reviews,
+.watch {
+    border: 2px solid #2F4F4F;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px; /* optional */
+}
+.reviews {
+    max-height: 300px; /* Limit height so it doesn't stretch too far */
+    overflow-y: auto;  /* Enables vertical scrolling if content overflows */
+    padding-right: 10px; /* Prevent text from overlapping scrollbar */
+}
+
+
